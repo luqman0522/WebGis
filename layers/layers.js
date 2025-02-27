@@ -44,9 +44,9 @@ var lyr_TANDA_SEMPADAN_2 = new ol.layer.Vector({
 
 lyr_GoogleSatellite_0.setVisible(true);lyr_LOT_1.setVisible(true);lyr_TANDA_SEMPADAN_2.setVisible(true);
 var layersList = [lyr_GoogleSatellite_0,lyr_LOT_1,lyr_TANDA_SEMPADAN_2];
-lyr_LOT_1.set('fieldAliases', {'AREA': 'AREA', 'NO_LOT': 'NO_LOT', 'layer': 'layer', 'path': 'path', });
+lyr_LOT_1.set('fieldAliases', {'AREA': 'AREA', 'NO_LOT': 'NO_LOT', 'layer': 'layer', 'path': 'path', 'tsp — hakmilik_DAERAH': 'tsp — hakmilik_DAERAH', 'tsp — hakmilik_NO_PA': 'tsp — hakmilik_NO_PA', 'tsp — pemilik_PEMILIK': 'tsp — pemilik_PEMILIK', });
 lyr_TANDA_SEMPADAN_2.set('fieldAliases', {'FID': 'FID', 'vertex_ind': 'vertex_ind', 'vertex_par': 'vertex_par', 'vertex_p_1': 'vertex_p_1', 'vertex_p_2': 'vertex_p_2', 'distance': 'distance', 'angle': 'angle', 'x': 'x', 'y': 'y', 'layer': 'layer', 'path': 'path', });
-lyr_LOT_1.set('fieldImages', {'AREA': '', 'NO_LOT': '', 'layer': '', 'path': '', });
+lyr_LOT_1.set('fieldImages', {'AREA': 'TextEdit', 'NO_LOT': 'TextEdit', 'layer': 'TextEdit', 'path': 'TextEdit', 'tsp — hakmilik_DAERAH': 'TextEdit', 'tsp — hakmilik_NO_PA': 'TextEdit', 'tsp — pemilik_PEMILIK': 'TextEdit', });
 lyr_TANDA_SEMPADAN_2.set('fieldImages', {'FID': '', 'vertex_ind': '', 'vertex_par': '', 'vertex_p_1': '', 'vertex_p_2': '', 'distance': '', 'angle': '', 'x': '', 'y': '', 'layer': '', 'path': '', });
 lyr_LOT_1.set('fieldLabels', {'AREA': 'header label - visible with data', 'NO_LOT': 'header label - visible with data', 'layer': 'hidden field', 'path': 'hidden field', });
 lyr_TANDA_SEMPADAN_2.set('fieldLabels', {'FID': 'no label', 'vertex_ind': 'no label', 'vertex_par': 'no label', 'vertex_p_1': 'no label', 'vertex_p_2': 'no label', 'distance': 'no label', 'angle': 'no label', 'x': 'no label', 'y': 'no label', 'layer': 'no label', 'path': 'no label', });
