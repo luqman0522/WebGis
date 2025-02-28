@@ -48,7 +48,7 @@ lyr_LOT_1.set('fieldAliases', {'AREA': 'AREA', 'NO_LOT': 'NO_LOT', 'layer': 'lay
 lyr_TANDA_SEMPADAN_2.set('fieldAliases', {'FID': 'FID', 'vertex_ind': 'vertex_ind', 'vertex_par': 'vertex_par', 'vertex_p_1': 'vertex_p_1', 'vertex_p_2': 'vertex_p_2', 'distance': 'distance', 'angle': 'angle', 'x': 'x', 'y': 'y', 'layer': 'layer', 'path': 'path', });
 lyr_LOT_1.set('fieldImages', {'AREA': 'TextEdit', 'NO_LOT': 'TextEdit', 'layer': 'TextEdit', 'path': 'TextEdit', 'tsp — hakmilik_DAERAH': 'TextEdit', 'tsp — hakmilik_NO_PA': 'TextEdit', 'tsp — pemilik_PEMILIK': 'TextEdit', });
 lyr_TANDA_SEMPADAN_2.set('fieldImages', {'FID': '', 'vertex_ind': '', 'vertex_par': '', 'vertex_p_1': '', 'vertex_p_2': '', 'distance': '', 'angle': '', 'x': '', 'y': '', 'layer': '', 'path': '', });
-lyr_LOT_1.set('fieldLabels', {'AREA': 'header label - visible with data', 'NO_LOT': 'header label - visible with data', 'layer': 'hidden field', 'path': 'hidden field', });
+lyr_LOT_1.set('fieldLabels', {'AREA': 'header label - visible with data', 'NO_LOT': 'header label - visible with data', 'layer': 'hidden field', 'path': 'hidden field', 'tsp — hakmilik_DAERAH': 'no label', 'tsp — hakmilik_NO_PA': 'no label', 'tsp — pemilik_PEMILIK': 'no label', });
 lyr_TANDA_SEMPADAN_2.set('fieldLabels', {'FID': 'no label', 'vertex_ind': 'no label', 'vertex_par': 'no label', 'vertex_p_1': 'no label', 'vertex_p_2': 'no label', 'distance': 'no label', 'angle': 'no label', 'x': 'no label', 'y': 'no label', 'layer': 'no label', 'path': 'no label', });
 lyr_TANDA_SEMPADAN_2.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
