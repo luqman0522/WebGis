@@ -9,7 +9,7 @@ var map = new ol.Map({
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([11412534.250820, 233908.641554, 11413277.331269, 234324.149304], map.getSize());
+map.getView().fit([11412268.726331, 233874.588035, 11413325.387451, 234359.659788], map.getSize());
 
 ////small screen definition
     var hasTouchScreen = map.getViewport().classList.contains('ol-touch');
@@ -829,7 +829,7 @@ if (elementToMove && parentElement) {
 //layer search
 
 var searchLayer = new SearchLayer({
-    layer: lyr_LOT_1,
+    layer: lyr_mergePA_1,
     colName: 'NO_LOT',
     zoom: 10,
     collapsed: true,
