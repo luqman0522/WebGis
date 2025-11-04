@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="css/qgis2web.css">
         <link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link rel="stylesheet" href="css/leaflet-search.css">
+        <link rel="stylesheet" href="css/filter.css">
+<link rel="stylesheet" href="css/nouislider.min.css">
         <style>
         html, body, #map {
             width: 100%;
@@ -35,12 +37,15 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-search.js"></script>
+        <script src="js/tailDT.js"></script>
+<script src="js/nouislider.min.js"></script>
+<script src="js/wNumb.js"></script>
         <script src="data/SUHUC_2.js"></script>
         <script src="data/MAKLUMATSEKOLAHDAERAHKINTA_3.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[4.22281441546162,100.68901919840934],[4.898351506246873,101.99263226031033]]);
+        }).fitBounds([[4.1635533777389595,100.51992818401142],[4.838812382781301,101.8234040391049]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -91,15 +96,15 @@
         });
         layer_GoogleSatellite_0;
         map.addLayer(layer_GoogleSatellite_0);
-        map.createPane('pane_extract_1');
-        map.getPane('pane_extract_1').style.zIndex = 401;
-        var img_extract_1 = 'data/extract_1.png';
-        var img_bounds_extract_1 = [[4.238923472236985,100.94033801589794],[4.788091157229086,101.38840408674861]];
-        var layer_extract_1 = new L.imageOverlay(img_extract_1,
-                                              img_bounds_extract_1,
-                                              {pane: 'pane_extract_1'});
-        bounds_group.addLayer(layer_extract_1);
-        map.addLayer(layer_extract_1);
+        map.createPane('pane_extract251_1');
+        map.getPane('pane_extract251_1').style.zIndex = 401;
+        var img_extract251_1 = 'data/extract251_1.png';
+        var img_bounds_extract251_1 = [[4.238923472236985,100.94033801589794],[4.788091157229086,101.38840408674861]];
+        var layer_extract251_1 = new L.imageOverlay(img_extract251_1,
+                                              img_bounds_extract251_1,
+                                              {pane: 'pane_extract251_1'});
+        bounds_group.addLayer(layer_extract251_1);
+        map.addLayer(layer_extract251_1);
         function pop_SUHUC_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -114,10 +119,10 @@
         }
 
         function style_SUHUC_2_0(feature) {
-            if (feature.properties['SUHU (°C)'] >= 23.900300 && feature.properties['SUHU (°C)'] <= 27.597000 ) {
+            if (feature.properties['SUHU (°C)'] >= 22.784100 && feature.properties['SUHU (°C)'] <= 29.323100 ) {
                 return {
                 pane: 'pane_SUHUC_2',
-                radius: 8.8,
+                radius: 8.4,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -130,10 +135,10 @@
                 interactive: true,
             }
             }
-            if (feature.properties['SUHU (°C)'] >= 27.597000 && feature.properties['SUHU (°C)'] <= 28.930300 ) {
+            if (feature.properties['SUHU (°C)'] >= 29.323100 && feature.properties['SUHU (°C)'] <= 30.446300 ) {
                 return {
                 pane: 'pane_SUHUC_2',
-                radius: 8.8,
+                radius: 8.4,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -146,10 +151,10 @@
                 interactive: true,
             }
             }
-            if (feature.properties['SUHU (°C)'] >= 28.930300 && feature.properties['SUHU (°C)'] <= 31.310800 ) {
+            if (feature.properties['SUHU (°C)'] >= 30.446300 && feature.properties['SUHU (°C)'] <= 32.210400 ) {
                 return {
                 pane: 'pane_SUHUC_2',
-                radius: 8.8,
+                radius: 8.4,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -258,7 +263,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(16,43,220,1.0)',
+                fillColor: 'rgba(117,240,222,1.0)',
                 interactive: true,
             }
                     break;
@@ -274,7 +279,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(16,43,220,1.0)',
+                fillColor: 'rgba(117,240,222,1.0)',
                 interactive: true,
             }
                     break;
@@ -290,7 +295,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(16,43,220,1.0)',
+                fillColor: 'rgba(117,240,222,1.0)',
                 interactive: true,
             }
                     break;
@@ -306,7 +311,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(57,226,229,1.0)',
+                fillColor: 'rgba(65,255,1,1.0)',
                 interactive: true,
             }
                     break;
@@ -322,7 +327,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(57,226,229,1.0)',
+                fillColor: 'rgba(65,255,1,1.0)',
                 interactive: true,
             }
                     break;
@@ -338,7 +343,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(16,43,220,1.0)',
+                fillColor: 'rgba(117,240,222,1.0)',
                 interactive: true,
             }
                     break;
@@ -354,7 +359,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(178,95,208,1.0)',
+                fillColor: 'rgba(99,213,99,1.0)',
                 interactive: true,
             }
                     break;
@@ -382,8 +387,8 @@
         map.addLayer(layer_MAKLUMATSEKOLAHDAERAHKINTA_3);
         var overlaysTree = [
             {label: 'MAKLUMAT SEKOLAH DAERAH KINTA<br /><table><tr><td style="text-align: center;"><img src="legend/MAKLUMATSEKOLAHDAERAHKINTA_3_SEKOLAHMENENGAH0.png" /></td><td>SEKOLAH MENENGAH</td></tr><tr><td style="text-align: center;"><img src="legend/MAKLUMATSEKOLAHDAERAHKINTA_3_SEKOLAHMENENGAH1.png" /></td><td>SEKOLAH MENENGAH</td></tr><tr><td style="text-align: center;"><img src="legend/MAKLUMATSEKOLAHDAERAHKINTA_3_SEKOLAHMENENGAH2.png" /></td><td>SEKOLAH MENENGAH</td></tr><tr><td style="text-align: center;"><img src="legend/MAKLUMATSEKOLAHDAERAHKINTA_3_SEKOLAHRENDAH3.png" /></td><td>SEKOLAH RENDAH</td></tr><tr><td style="text-align: center;"><img src="legend/MAKLUMATSEKOLAHDAERAHKINTA_3_SEKOLAHRENDAH4.png" /></td><td>SEKOLAH RENDAH</td></tr><tr><td style="text-align: center;"><img src="legend/MAKLUMATSEKOLAHDAERAHKINTA_3_SEKOLAHMENENGAH5.png" /></td><td>SEKOLAH MENENGAH</td></tr><tr><td style="text-align: center;"><img src="legend/MAKLUMATSEKOLAHDAERAHKINTA_3_6.png" /></td><td></td></tr></table>', layer: layer_MAKLUMATSEKOLAHDAERAHKINTA_3},
-            {label: 'SUHU (°C)<br /><table><tr><td style="text-align: center;"><img src="legend/SUHUC_2_2392760.png" /></td><td>23.9 - 27.6</td></tr><tr><td style="text-align: center;"><img src="legend/SUHUC_2_2762891.png" /></td><td>27.6 - 28.9</td></tr><tr><td style="text-align: center;"><img src="legend/SUHUC_2_2893132.png" /></td><td>28.9 - 31.3</td></tr></table>', layer: layer_SUHUC_2},
-            {label: "extract", layer: layer_extract_1},
+            {label: 'SUHU (°C)<br /><table><tr><td style="text-align: center;"><img src="legend/SUHUC_2_2282930.png" /></td><td>22.8 - 29.3</td></tr><tr><td style="text-align: center;"><img src="legend/SUHUC_2_2933041.png" /></td><td>29.3 - 30.4</td></tr><tr><td style="text-align: center;"><img src="legend/SUHUC_2_3043222.png" /></td><td>30.4 - 32.2</td></tr></table>', layer: layer_SUHUC_2},
+            {label: "extract251", layer: layer_extract251_1},
             {label: "Google Satellite", layer: layer_GoogleSatellite_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
@@ -403,6 +408,384 @@
             propertyName: 'NAMA SEKOLAH'}));
         document.getElementsByClassName('search-button')[0].className +=
          ' fa fa-binoculars';
+        var mapDiv = document.getElementById('map');
+        var row = document.createElement('div');
+        row.className="row";
+        row.id="all";
+        row.style.height = "100%";
+        var col1 = document.createElement('div');
+        col1.className="col9";
+        col1.id = "mapWindow";
+        col1.style.height = "99%";
+        col1.style.width = "80%";
+        col1.style.display = "inline-block";
+        var col2 = document.createElement('div');
+        col2.className="col3";
+        col2.id = "menu";
+        col2.style.display = "inline-block";
+        mapDiv.parentNode.insertBefore(row, mapDiv);
+        document.getElementById("all").appendChild(col1);
+        document.getElementById("all").appendChild(col2);
+        col1.appendChild(mapDiv)
+        var Filters = {"NO TELEFON": "str"};
+        function filterFunc() {
+          map.eachLayer(function(lyr){
+          if ("options" in lyr && "dataVar" in lyr["options"]){
+            features = this[lyr["options"]["dataVar"]].features.slice(0);
+            try{
+              for (key in Filters){
+                keyS = key.replace(/[^a-zA-Z0-9_]/g, "")
+                if (Filters[key] == "str" || Filters[key] == "bool"){
+                  var selection = [];
+                  var options = document.getElementById("sel_" + keyS).options
+                  for (var i=0; i < options.length; i++) {
+                    if (options[i].selected) selection.push(options[i].value);
+                  }
+                    try{
+                      if (key in features[0].properties){
+                        for (i = features.length - 1;
+                          i >= 0; --i){
+                          if (selection.indexOf(
+                          features[i].properties[key])<0
+                          && selection.length>0) {
+                          features.splice(i,1);
+                          }
+                        }
+                      }
+                    } catch(err){
+                  }
+                }
+                if (Filters[key] == "int"){
+                  sliderVals =  document.getElementById(
+                    "div_" + keyS).noUiSlider.get();
+                  try{
+                    if (key in features[0].properties){
+                    for (i = features.length - 1; i >= 0; --i){
+                      if (parseInt(features[i].properties[key])
+                          < sliderVals[0]
+                          || parseInt(features[i].properties[key])
+                          > sliderVals[1]){
+                            features.splice(i,1);
+                          }
+                        }
+                      }
+                    } catch(err){
+                    }
+                  }
+                if (Filters[key] == "real"){
+                  sliderVals =  document.getElementById(
+                    "div_" + keyS).noUiSlider.get();
+                  try{
+                    if (key in features[0].properties){
+                    for (i = features.length - 1; i >= 0; --i){
+                      if (features[i].properties[key]
+                          < sliderVals[0]
+                          || features[i].properties[key]
+                          > sliderVals[1]){
+                            features.splice(i,1);
+                          }
+                        }
+                      }
+                    } catch(err){
+                    }
+                  }
+                if (Filters[key] == "date"
+                  || Filters[key] == "datetime"
+                  || Filters[key] == "time"){
+                  try{
+                    if (key in features[0].properties){
+                      HTMLkey = key.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, '');
+                      startdate = document.getElementById("dat_" +
+                        HTMLkey + "_date1").value.replace(" ", "T");
+                      enddate = document.getElementById("dat_" +
+                        HTMLkey + "_date2").value.replace(" ", "T");
+                      for (i = features.length - 1; i >= 0; --i){
+                        if (features[i].properties[key] < startdate
+                          || features[i].properties[key] > enddate){
+                          features.splice(i,1);
+                        }
+                      }
+                    }
+                  } catch(err){
+                  }
+                }
+              }
+            } catch(err){
+            }
+          this[lyr["options"]["layerName"]].clearLayers();
+          this[lyr["options"]["layerName"]].addData(features);
+          }
+          })
+        }
+            document.getElementById("menu").appendChild(
+                document.createElement("div"));
+            var div_NOTELEFON = document.createElement('div');
+            div_NOTELEFON.id = "div_NOTELEFON";
+            div_NOTELEFON.className= "filterselect";
+            document.getElementById("menu").appendChild(div_NOTELEFON);
+            sel_NOTELEFON = document.createElement('select');
+            sel_NOTELEFON.multiple = true;
+            sel_NOTELEFON.size = 10;
+            sel_NOTELEFON.id = "sel_NOTELEFON";
+            var NOTELEFON_options_str = "<option value='' unselected></option>";
+            sel_NOTELEFON.onchange = function(){filterFunc()};
+            NOTELEFON_options_str  += '<option value="1165750581">1165750581</option>';
+            NOTELEFON_options_str  += '<option value="194645022">194645022</option>';
+            NOTELEFON_options_str  += '<option value="52011395">52011395</option>';
+            NOTELEFON_options_str  += '<option value="52011534">52011534</option>';
+            NOTELEFON_options_str  += '<option value="52011808">52011808</option>';
+            NOTELEFON_options_str  += '<option value="52012145">52012145</option>';
+            NOTELEFON_options_str  += '<option value="52012727">52012727</option>';
+            NOTELEFON_options_str  += '<option value="52012973">52012973</option>';
+            NOTELEFON_options_str  += '<option value="52015669">52015669</option>';
+            NOTELEFON_options_str  += '<option value="52016112">52016112</option>';
+            NOTELEFON_options_str  += '<option value="52016177">52016177</option>';
+            NOTELEFON_options_str  += '<option value="52016308">52016308</option>';
+            NOTELEFON_options_str  += '<option value="52016458">52016458</option>';
+            NOTELEFON_options_str  += '<option value="52016884">52016884</option>';
+            NOTELEFON_options_str  += '<option value="52017246">52017246</option>';
+            NOTELEFON_options_str  += '<option value="52410032">52410032</option>';
+            NOTELEFON_options_str  += '<option value="52413269">52413269</option>';
+            NOTELEFON_options_str  += '<option value="52415487">52415487</option>';
+            NOTELEFON_options_str  += '<option value="52415608">52415608</option>';
+            NOTELEFON_options_str  += '<option value="52418530">52418530</option>';
+            NOTELEFON_options_str  += '<option value="52422362">52422362</option>';
+            NOTELEFON_options_str  += '<option value="52435455">52435455</option>';
+            NOTELEFON_options_str  += '<option value="52494200">52494200</option>';
+            NOTELEFON_options_str  += '<option value="52494830">52494830</option>';
+            NOTELEFON_options_str  += '<option value="52494900">52494900</option>';
+            NOTELEFON_options_str  += '<option value="52496678">52496678</option>';
+            NOTELEFON_options_str  += '<option value="52530520">52530520</option>';
+            NOTELEFON_options_str  += '<option value="52540058">52540058</option>';
+            NOTELEFON_options_str  += '<option value="52540418">52540418</option>';
+            NOTELEFON_options_str  += '<option value="52540648">52540648</option>';
+            NOTELEFON_options_str  += '<option value="52542154">52542154</option>';
+            NOTELEFON_options_str  += '<option value="52542245">52542245</option>';
+            NOTELEFON_options_str  += '<option value="52542591">52542591</option>';
+            NOTELEFON_options_str  += '<option value="52543973">52543973</option>';
+            NOTELEFON_options_str  += '<option value="52544234">52544234</option>';
+            NOTELEFON_options_str  += '<option value="52545064">52545064</option>';
+            NOTELEFON_options_str  += '<option value="52545307">52545307</option>';
+            NOTELEFON_options_str  += '<option value="52545453">52545453</option>';
+            NOTELEFON_options_str  += '<option value="52545457">52545457</option>';
+            NOTELEFON_options_str  += '<option value="52545508">52545508</option>';
+            NOTELEFON_options_str  += '<option value="52545587">52545587</option>';
+            NOTELEFON_options_str  += '<option value="52545680">52545680</option>';
+            NOTELEFON_options_str  += '<option value="52545713">52545713</option>';
+            NOTELEFON_options_str  += '<option value="52547982">52547982</option>';
+            NOTELEFON_options_str  += '<option value="52548116">52548116</option>';
+            NOTELEFON_options_str  += '<option value="52548807">52548807</option>';
+            NOTELEFON_options_str  += '<option value="52549151">52549151</option>';
+            NOTELEFON_options_str  += '<option value="52549207">52549207</option>';
+            NOTELEFON_options_str  += '<option value="52549336">52549336</option>';
+            NOTELEFON_options_str  += '<option value="52549580">52549580</option>';
+            NOTELEFON_options_str  += '<option value="52549592">52549592</option>';
+            NOTELEFON_options_str  += '<option value="52550546">52550546</option>';
+            NOTELEFON_options_str  += '<option value="52559896">52559896</option>';
+            NOTELEFON_options_str  += '<option value="52560024">52560024</option>';
+            NOTELEFON_options_str  += '<option value="52810279">52810279</option>';
+            NOTELEFON_options_str  += '<option value="52811727">52811727</option>';
+            NOTELEFON_options_str  += '<option value="52812559">52812559</option>';
+            NOTELEFON_options_str  += '<option value="52812594">52812594</option>';
+            NOTELEFON_options_str  += '<option value="52813240">52813240</option>';
+            NOTELEFON_options_str  += '<option value="52815069">52815069</option>';
+            NOTELEFON_options_str  += '<option value="52821788">52821788</option>';
+            NOTELEFON_options_str  += '<option value="52823242">52823242</option>';
+            NOTELEFON_options_str  += '<option value="52829178">52829178</option>';
+            NOTELEFON_options_str  += '<option value="52881217">52881217</option>';
+            NOTELEFON_options_str  += '<option value="52882755">52882755</option>';
+            NOTELEFON_options_str  += '<option value="52883955">52883955</option>';
+            NOTELEFON_options_str  += '<option value="52884915">52884915</option>';
+            NOTELEFON_options_str  += '<option value="52885227">52885227</option>';
+            NOTELEFON_options_str  += '<option value="52910310">52910310</option>';
+            NOTELEFON_options_str  += '<option value="52912534">52912534</option>';
+            NOTELEFON_options_str  += '<option value="52913166">52913166</option>';
+            NOTELEFON_options_str  += '<option value="52916844">52916844</option>';
+            NOTELEFON_options_str  += '<option value="52917200">52917200</option>';
+            NOTELEFON_options_str  += '<option value="52921618">52921618</option>';
+            NOTELEFON_options_str  += '<option value="52924469">52924469</option>';
+            NOTELEFON_options_str  += '<option value="52931151">52931151</option>';
+            NOTELEFON_options_str  += '<option value="53113385">53113385</option>';
+            NOTELEFON_options_str  += '<option value="53114339">53114339</option>';
+            NOTELEFON_options_str  += '<option value="53115996">53115996</option>';
+            NOTELEFON_options_str  += '<option value="53120663">53120663</option>';
+            NOTELEFON_options_str  += '<option value="53120708">53120708</option>';
+            NOTELEFON_options_str  += '<option value="53121728">53121728</option>';
+            NOTELEFON_options_str  += '<option value="53121890">53121890</option>';
+            NOTELEFON_options_str  += '<option value="53122855">53122855</option>';
+            NOTELEFON_options_str  += '<option value="53123528">53123528</option>';
+            NOTELEFON_options_str  += '<option value="53126813">53126813</option>';
+            NOTELEFON_options_str  += '<option value="53130929">53130929</option>';
+            NOTELEFON_options_str  += '<option value="53135443">53135443</option>';
+            NOTELEFON_options_str  += '<option value="53138648">53138648</option>';
+            NOTELEFON_options_str  += '<option value="53188132">53188132</option>';
+            NOTELEFON_options_str  += '<option value="53211735">53211735</option>';
+            NOTELEFON_options_str  += '<option value="53211778">53211778</option>';
+            NOTELEFON_options_str  += '<option value="53214701">53214701</option>';
+            NOTELEFON_options_str  += '<option value="53214915">53214915</option>';
+            NOTELEFON_options_str  += '<option value="53215607">53215607</option>';
+            NOTELEFON_options_str  += '<option value="53216399">53216399</option>';
+            NOTELEFON_options_str  += '<option value="53219041">53219041</option>';
+            NOTELEFON_options_str  += '<option value="53221523">53221523</option>';
+            NOTELEFON_options_str  += '<option value="53221862">53221862</option>';
+            NOTELEFON_options_str  += '<option value="53225150">53225150</option>';
+            NOTELEFON_options_str  += '<option value="53226860">53226860</option>';
+            NOTELEFON_options_str  += '<option value="53228995">53228995</option>';
+            NOTELEFON_options_str  += '<option value="53229491">53229491</option>';
+            NOTELEFON_options_str  += '<option value="53288201">53288201</option>';
+            NOTELEFON_options_str  += '<option value="53571660">53571660</option>';
+            NOTELEFON_options_str  += '<option value="53572939">53572939</option>';
+            NOTELEFON_options_str  += '<option value="53573577">53573577</option>';
+            NOTELEFON_options_str  += '<option value="53575627">53575627</option>';
+            NOTELEFON_options_str  += '<option value="53576199">53576199</option>';
+            NOTELEFON_options_str  += '<option value="53577355">53577355</option>';
+            NOTELEFON_options_str  += '<option value="53591012">53591012</option>';
+            NOTELEFON_options_str  += '<option value="53591230">53591230</option>';
+            NOTELEFON_options_str  += '<option value="53591255">53591255</option>';
+            NOTELEFON_options_str  += '<option value="53591264">53591264</option>';
+            NOTELEFON_options_str  += '<option value="53591314">53591314</option>';
+            NOTELEFON_options_str  += '<option value="53591316">53591316</option>';
+            NOTELEFON_options_str  += '<option value="53592884">53592884</option>';
+            NOTELEFON_options_str  += '<option value="53593043">53593043</option>';
+            NOTELEFON_options_str  += '<option value="53593317">53593317</option>';
+            NOTELEFON_options_str  += '<option value="53594657">53594657</option>';
+            NOTELEFON_options_str  += '<option value="53595922">53595922</option>';
+            NOTELEFON_options_str  += '<option value="53597688">53597688</option>';
+            NOTELEFON_options_str  += '<option value="53606090">53606090</option>';
+            NOTELEFON_options_str  += '<option value="53607099">53607099</option>';
+            NOTELEFON_options_str  += '<option value="53607925">53607925</option>';
+            NOTELEFON_options_str  += '<option value="53609209">53609209</option>';
+            NOTELEFON_options_str  += '<option value="53609218">53609218</option>';
+            NOTELEFON_options_str  += '<option value="53609219">53609219</option>';
+            NOTELEFON_options_str  += '<option value="53609775">53609775</option>';
+            NOTELEFON_options_str  += '<option value="53633203">53633203</option>';
+            NOTELEFON_options_str  += '<option value="53651561">53651561</option>';
+            NOTELEFON_options_str  += '<option value="53660621">53660621</option>';
+            NOTELEFON_options_str  += '<option value="53660806">53660806</option>';
+            NOTELEFON_options_str  += '<option value="53661235">53661235</option>';
+            NOTELEFON_options_str  += '<option value="53661253">53661253</option>';
+            NOTELEFON_options_str  += '<option value="53661366">53661366</option>';
+            NOTELEFON_options_str  += '<option value="53661440">53661440</option>';
+            NOTELEFON_options_str  += '<option value="53661451">53661451</option>';
+            NOTELEFON_options_str  += '<option value="53661536">53661536</option>';
+            NOTELEFON_options_str  += '<option value="53661577">53661577</option>';
+            NOTELEFON_options_str  += '<option value="53662328">53662328</option>';
+            NOTELEFON_options_str  += '<option value="53665516">53665516</option>';
+            NOTELEFON_options_str  += '<option value="53667707">53667707</option>';
+            NOTELEFON_options_str  += '<option value="53668792">53668792</option>';
+            NOTELEFON_options_str  += '<option value="53676218">53676218</option>';
+            NOTELEFON_options_str  += '<option value="53676237">53676237</option>';
+            NOTELEFON_options_str  += '<option value="53676395">53676395</option>';
+            NOTELEFON_options_str  += '<option value="53677064">53677064</option>';
+            NOTELEFON_options_str  += '<option value="53678568">53678568</option>';
+            NOTELEFON_options_str  += '<option value="53679409">53679409</option>';
+            NOTELEFON_options_str  += '<option value="53679414">53679414</option>';
+            NOTELEFON_options_str  += '<option value="53701884">53701884</option>';
+            NOTELEFON_options_str  += '<option value="53702155">53702155</option>';
+            NOTELEFON_options_str  += '<option value="53702728">53702728</option>';
+            NOTELEFON_options_str  += '<option value="54651237">54651237</option>';
+            NOTELEFON_options_str  += '<option value="54651330">54651330</option>';
+            NOTELEFON_options_str  += '<option value="54651335">54651335</option>';
+            NOTELEFON_options_str  += '<option value="54651362">54651362</option>';
+            NOTELEFON_options_str  += '<option value="54651490">54651490</option>';
+            NOTELEFON_options_str  += '<option value="54660181">54660181</option>';
+            NOTELEFON_options_str  += '<option value="54660980">54660980</option>';
+            NOTELEFON_options_str  += '<option value="54661008">54661008</option>';
+            NOTELEFON_options_str  += '<option value="54661128">54661128</option>';
+            NOTELEFON_options_str  += '<option value="54661169">54661169</option>';
+            NOTELEFON_options_str  += '<option value="54661298">54661298</option>';
+            NOTELEFON_options_str  += '<option value="54661359">54661359</option>';
+            NOTELEFON_options_str  += '<option value="54661542">54661542</option>';
+            NOTELEFON_options_str  += '<option value="54662507">54662507</option>';
+            NOTELEFON_options_str  += '<option value="54666385">54666385</option>';
+            NOTELEFON_options_str  += '<option value="54666441">54666441</option>';
+            NOTELEFON_options_str  += '<option value="54666463">54666463</option>';
+            NOTELEFON_options_str  += '<option value="54666625">54666625</option>';
+            NOTELEFON_options_str  += '<option value="54667098">54667098</option>';
+            NOTELEFON_options_str  += '<option value="54669587">54669587</option>';
+            NOTELEFON_options_str  += '<option value="54671220">54671220</option>';
+            NOTELEFON_options_str  += '<option value="54690014">54690014</option>';
+            NOTELEFON_options_str  += '<option value="54771243">54771243</option>';
+            NOTELEFON_options_str  += '<option value="54771366">54771366</option>';
+            NOTELEFON_options_str  += '<option value="54771382">54771382</option>';
+            NOTELEFON_options_str  += '<option value="54772682">54772682</option>';
+            NOTELEFON_options_str  += '<option value="54775145">54775145</option>';
+            NOTELEFON_options_str  += '<option value="54775506">54775506</option>';
+            NOTELEFON_options_str  += '<option value="54775632">54775632</option>';
+            NOTELEFON_options_str  += '<option value="55061726">55061726</option>';
+            NOTELEFON_options_str  += '<option value="55061925">55061925</option>';
+            NOTELEFON_options_str  += '<option value="55253417">55253417</option>';
+            NOTELEFON_options_str  += '<option value="55260408">55260408</option>';
+            NOTELEFON_options_str  += '<option value="55261511">55261511</option>';
+            NOTELEFON_options_str  += '<option value="55263179">55263179</option>';
+            NOTELEFON_options_str  += '<option value="55264416">55264416</option>';
+            NOTELEFON_options_str  += '<option value="55264778">55264778</option>';
+            NOTELEFON_options_str  += '<option value="55265082">55265082</option>';
+            NOTELEFON_options_str  += '<option value="55265441">55265441</option>';
+            NOTELEFON_options_str  += '<option value="55265553">55265553</option>';
+            NOTELEFON_options_str  += '<option value="55267522">55267522</option>';
+            NOTELEFON_options_str  += '<option value="55268889">55268889</option>';
+            NOTELEFON_options_str  += '<option value="55270020">55270020</option>';
+            NOTELEFON_options_str  += '<option value="55274100">55274100</option>';
+            NOTELEFON_options_str  += '<option value="55276485">55276485</option>';
+            NOTELEFON_options_str  += '<option value="55277134">55277134</option>';
+            NOTELEFON_options_str  += '<option value="55281277">55281277</option>';
+            NOTELEFON_options_str  += '<option value="55282149">55282149</option>';
+            NOTELEFON_options_str  += '<option value="55286863">55286863</option>';
+            NOTELEFON_options_str  += '<option value="55330801">55330801</option>';
+            NOTELEFON_options_str  += '<option value="55331363">55331363</option>';
+            NOTELEFON_options_str  += '<option value="55331671">55331671</option>';
+            NOTELEFON_options_str  += '<option value="55331709">55331709</option>';
+            NOTELEFON_options_str  += '<option value="55331727">55331727</option>';
+            NOTELEFON_options_str  += '<option value="55332950">55332950</option>';
+            NOTELEFON_options_str  += '<option value="55333859">55333859</option>';
+            NOTELEFON_options_str  += '<option value="55333959">55333959</option>';
+            NOTELEFON_options_str  += '<option value="55335358">55335358</option>';
+            NOTELEFON_options_str  += '<option value="55336437">55336437</option>';
+            NOTELEFON_options_str  += '<option value="55336770">55336770</option>';
+            NOTELEFON_options_str  += '<option value="55365681">55365681</option>';
+            NOTELEFON_options_str  += '<option value="55424841">55424841</option>';
+            NOTELEFON_options_str  += '<option value="55450231">55450231</option>';
+            NOTELEFON_options_str  += '<option value="55450844">55450844</option>';
+            NOTELEFON_options_str  += '<option value="55450902">55450902</option>';
+            NOTELEFON_options_str  += '<option value="55450905">55450905</option>';
+            NOTELEFON_options_str  += '<option value="55452464">55452464</option>';
+            NOTELEFON_options_str  += '<option value="55453890">55453890</option>';
+            NOTELEFON_options_str  += '<option value="55454968">55454968</option>';
+            NOTELEFON_options_str  += '<option value="55455175">55455175</option>';
+            NOTELEFON_options_str  += '<option value="55455442">55455442</option>';
+            NOTELEFON_options_str  += '<option value="55456599">55456599</option>';
+            NOTELEFON_options_str  += '<option value="55457082">55457082</option>';
+            NOTELEFON_options_str  += '<option value="55457733">55457733</option>';
+            NOTELEFON_options_str  += '<option value="55457925">55457925</option>';
+            NOTELEFON_options_str  += '<option value="55458117">55458117</option>';
+            NOTELEFON_options_str  += '<option value="55461962">55461962</option>';
+            NOTELEFON_options_str  += '<option value="55462105">55462105</option>';
+            NOTELEFON_options_str  += '<option value="55464552">55464552</option>';
+            NOTELEFON_options_str  += '<option value="55464913">55464913</option>';
+            NOTELEFON_options_str  += '<option value="55469261">55469261</option>';
+            NOTELEFON_options_str  += '<option value="55477405">55477405</option>';
+            NOTELEFON_options_str  += '<option value="55483749">55483749</option>';
+            NOTELEFON_options_str  += '<option value="55484299">55484299</option>';
+            NOTELEFON_options_str  += '<option value="55497606">55497606</option>';
+            NOTELEFON_options_str  += '<option value="TIADA">TIADA</option>';
+            sel_NOTELEFON.innerHTML = NOTELEFON_options_str;
+            div_NOTELEFON.appendChild(sel_NOTELEFON);
+            var lab_NOTELEFON = document.createElement('div');
+            lab_NOTELEFON.innerHTML = 'NO TELEFON';
+            lab_NOTELEFON.className = 'filterlabel';
+            div_NOTELEFON.appendChild(lab_NOTELEFON);
+            var reset_NOTELEFON = document.createElement('div');
+            reset_NOTELEFON.innerHTML = 'clear filter';
+            reset_NOTELEFON.className = 'filterlabel';
+            reset_NOTELEFON.onclick = function() {
+                var options = document.getElementById("sel_NOTELEFON").options;
+                for (var i=0; i < options.length; i++) {
+                    options[i].selected = false;
+                }
+                filterFunc();
+            };
+            div_NOTELEFON.appendChild(reset_NOTELEFON);
         L.ImageOverlay.include({
             getBounds: function () {
                 return this._bounds;
