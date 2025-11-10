@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="css/qgis2web.css">
         <link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link rel="stylesheet" href="css/leaflet-search.css">
+        <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
         <style>
         html, body, #map {
             width: 100%;
@@ -36,14 +37,15 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
+        <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
         <script src="js/leaflet-search.js"></script>
-        <script src="data/BOARDERKINTA_2.js"></script>
-        <script src="data/SUHUC2020_6.js"></script>
+        <script src="data/BOARDERKINTA_5.js"></script>
+        <script src="data/SUHUC_6.js"></script>
         <script src="data/MAKLUMATSEKOLAHDAERAHKINTA_7.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[4.3789072229905655,100.86342165084983],[4.748021901025862,101.58149457399017]]);
+        }).fitBounds([[4.221980954154588,100.81123013997154],[4.865172722288134,102.0624905762723]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -108,7 +110,34 @@
         });
         layer_GoogleSatellite_1;
         map.addLayer(layer_GoogleSatellite_1);
-        function pop_BOARDERKINTA_2(feature, layer) {
+        map.createPane('pane_LST2025_2');
+        map.getPane('pane_LST2025_2').style.zIndex = 402;
+        var img_LST2025_2 = 'data/LST2025_2.png';
+        var img_bounds_LST2025_2 = [[4.238923472236985,100.94033801589794],[4.788091157229086,101.38840408674861]];
+        var layer_LST2025_2 = new L.imageOverlay(img_LST2025_2,
+                                              img_bounds_LST2025_2,
+                                              {pane: 'pane_LST2025_2'});
+        bounds_group.addLayer(layer_LST2025_2);
+        map.addLayer(layer_LST2025_2);
+        map.createPane('pane_LST2020_3');
+        map.getPane('pane_LST2020_3').style.zIndex = 403;
+        var img_LST2020_3 = 'data/LST2020_3.png';
+        var img_bounds_LST2020_3 = [[4.238923472236985,100.94033801589794],[4.788091157229086,101.38840408674861]];
+        var layer_LST2020_3 = new L.imageOverlay(img_LST2020_3,
+                                              img_bounds_LST2020_3,
+                                              {pane: 'pane_LST2020_3'});
+        bounds_group.addLayer(layer_LST2020_3);
+        map.addLayer(layer_LST2020_3);
+        map.createPane('pane_LST2015_4');
+        map.getPane('pane_LST2015_4').style.zIndex = 404;
+        var img_LST2015_4 = 'data/LST2015_4.png';
+        var img_bounds_LST2015_4 = [[4.238923472236985,100.94033801589794],[4.788091157229086,101.38840408674861]];
+        var layer_LST2015_4 = new L.imageOverlay(img_LST2015_4,
+                                              img_bounds_LST2015_4,
+                                              {pane: 'pane_LST2015_4'});
+        bounds_group.addLayer(layer_LST2015_4);
+        map.addLayer(layer_LST2015_4);
+        function pop_BOARDERKINTA_5(feature, layer) {
             var popupContent = '<table>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -118,66 +147,37 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_BOARDERKINTA_2_0() {
+        function style_BOARDERKINTA_5_0() {
             return {
-                pane: 'pane_BOARDERKINTA_2',
+                pane: 'pane_BOARDERKINTA_5',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(190,178,151,1.0)',
+                weight: 4.0, 
+                fillOpacity: 0,
                 interactive: true,
             }
         }
-        map.createPane('pane_BOARDERKINTA_2');
-        map.getPane('pane_BOARDERKINTA_2').style.zIndex = 402;
-        map.getPane('pane_BOARDERKINTA_2').style['mix-blend-mode'] = 'normal';
-        var layer_BOARDERKINTA_2 = new L.geoJson(json_BOARDERKINTA_2, {
+        map.createPane('pane_BOARDERKINTA_5');
+        map.getPane('pane_BOARDERKINTA_5').style.zIndex = 405;
+        map.getPane('pane_BOARDERKINTA_5').style['mix-blend-mode'] = 'normal';
+        var layer_BOARDERKINTA_5 = new L.geoJson(json_BOARDERKINTA_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_BOARDERKINTA_2',
-            layerName: 'layer_BOARDERKINTA_2',
-            pane: 'pane_BOARDERKINTA_2',
-            onEachFeature: pop_BOARDERKINTA_2,
-            style: style_BOARDERKINTA_2_0,
+            dataVar: 'json_BOARDERKINTA_5',
+            layerName: 'layer_BOARDERKINTA_5',
+            pane: 'pane_BOARDERKINTA_5',
+            onEachFeature: pop_BOARDERKINTA_5,
+            style: style_BOARDERKINTA_5_0,
         });
-        bounds_group.addLayer(layer_BOARDERKINTA_2);
-        map.addLayer(layer_BOARDERKINTA_2);
-        map.createPane('pane_LST2025_3');
-        map.getPane('pane_LST2025_3').style.zIndex = 403;
-        var img_LST2025_3 = 'data/LST2025_3.png';
-        var img_bounds_LST2025_3 = [[4.238923472236985,100.94033801589794],[4.788091157229086,101.38840408674861]];
-        var layer_LST2025_3 = new L.imageOverlay(img_LST2025_3,
-                                              img_bounds_LST2025_3,
-                                              {pane: 'pane_LST2025_3'});
-        bounds_group.addLayer(layer_LST2025_3);
-        map.addLayer(layer_LST2025_3);
-        map.createPane('pane_LST2020_4');
-        map.getPane('pane_LST2020_4').style.zIndex = 404;
-        var img_LST2020_4 = 'data/LST2020_4.png';
-        var img_bounds_LST2020_4 = [[4.238923472236985,100.94033801589794],[4.788091157229086,101.38840408674861]];
-        var layer_LST2020_4 = new L.imageOverlay(img_LST2020_4,
-                                              img_bounds_LST2020_4,
-                                              {pane: 'pane_LST2020_4'});
-        bounds_group.addLayer(layer_LST2020_4);
-        map.addLayer(layer_LST2020_4);
-        map.createPane('pane_LST2015_5');
-        map.getPane('pane_LST2015_5').style.zIndex = 405;
-        var img_LST2015_5 = 'data/LST2015_5.png';
-        var img_bounds_LST2015_5 = [[4.238923472236985,100.94033801589794],[4.788091157229086,101.38840408674861]];
-        var layer_LST2015_5 = new L.imageOverlay(img_LST2015_5,
-                                              img_bounds_LST2015_5,
-                                              {pane: 'pane_LST2015_5'});
-        bounds_group.addLayer(layer_LST2015_5);
-        map.addLayer(layer_LST2015_5);
-        function pop_SUHUC2020_6(feature, layer) {
+        bounds_group.addLayer(layer_BOARDERKINTA_5);
+        map.addLayer(layer_BOARDERKINTA_5);
+        function pop_SUHUC_6(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td class="visible-with-data" id="SUHU (°C )" colspan="2"><strong>SUHU (°C )</strong><br />' + (feature.properties['SUHU (°C )'] !== null ? autolinker.link(String(feature.properties['SUHU (°C )']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="_max" colspan="2"><strong>_max</strong><br />' + (feature.properties['_max'] !== null ? autolinker.link(String(feature.properties['_max']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -187,49 +187,46 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_SUHUC2020_6_0(feature) {
-            if (feature.properties['SUHU (°C )'] >= 12.969600 && feature.properties['SUHU (°C )'] <= 26.613500 ) {
+        function style_SUHUC_6_0(feature) {
+            if (feature.properties['_max'] >= 25.123329 && feature.properties['_max'] <= 30.682665 ) {
                 return {
-                pane: 'pane_SUHUC2020_6',
-                radius: 10.0,
+                pane: 'pane_SUHUC_6',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1,
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(255,255,255,1.0)',
                 interactive: true,
             }
             }
-            if (feature.properties['SUHU (°C )'] >= 26.613500 && feature.properties['SUHU (°C )'] <= 28.845500 ) {
+            if (feature.properties['_max'] >= 30.682665 && feature.properties['_max'] <= 31.704033 ) {
                 return {
-                pane: 'pane_SUHUC2020_6',
-                radius: 10.0,
+                pane: 'pane_SUHUC_6',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1,
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,128,128,1.0)',
+                fillColor: 'rgba(255,111,238,1.0)',
                 interactive: true,
             }
             }
-            if (feature.properties['SUHU (°C )'] >= 28.845500 && feature.properties['SUHU (°C )'] <= 31.606500 ) {
+            if (feature.properties['_max'] >= 31.704033 && feature.properties['_max'] <= 33.470562 ) {
                 return {
-                pane: 'pane_SUHUC2020_6',
-                radius: 10.0,
+                pane: 'pane_SUHUC_6',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1,
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(255,0,0,1.0)',
@@ -237,26 +234,20 @@
             }
             }
         }
-        map.createPane('pane_SUHUC2020_6');
-        map.getPane('pane_SUHUC2020_6').style.zIndex = 406;
-        map.getPane('pane_SUHUC2020_6').style['mix-blend-mode'] = 'normal';
-        var layer_SUHUC2020_6 = new L.geoJson(json_SUHUC2020_6, {
+        map.createPane('pane_SUHUC_6');
+        map.getPane('pane_SUHUC_6').style.zIndex = 406;
+        map.getPane('pane_SUHUC_6').style['mix-blend-mode'] = 'normal';
+        var layer_SUHUC_6 = new L.geoJson(json_SUHUC_6, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_SUHUC2020_6',
-            layerName: 'layer_SUHUC2020_6',
-            pane: 'pane_SUHUC2020_6',
-            onEachFeature: pop_SUHUC2020_6,
-            pointToLayer: function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_SUHUC2020_6_0(feature));
-            },
+            dataVar: 'json_SUHUC_6',
+            layerName: 'layer_SUHUC_6',
+            pane: 'pane_SUHUC_6',
+            onEachFeature: pop_SUHUC_6,
+            style: style_SUHUC_6_0,
         });
-        bounds_group.addLayer(layer_SUHUC2020_6);
-        map.addLayer(layer_SUHUC2020_6);
+        bounds_group.addLayer(layer_SUHUC_6);
+        map.addLayer(layer_SUHUC_6);
         function pop_MAKLUMATSEKOLAHDAERAHKINTA_7(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -435,13 +426,23 @@
         });
         bounds_group.addLayer(layer_MAKLUMATSEKOLAHDAERAHKINTA_7);
         map.addLayer(layer_MAKLUMATSEKOLAHDAERAHKINTA_7);
+        var osmGeocoder = new L.Control.Geocoder({
+            collapsed: true,
+            position: 'topleft',
+            text: 'Search',
+            title: 'Testing'
+        }).addTo(map);
+        document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
+        .className += ' fa fa-search';
+        document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
+        .title += 'Search for a place';
         var overlaysTree = [
             {label: 'MAKLUMAT SEKOLAH DAERAH KINTA<br /><table><tr><td style="text-align: center;"><img src="legend/MAKLUMATSEKOLAHDAERAHKINTA_7_MenengahAtas0.png" /></td><td>Menengah Atas</td></tr><tr><td style="text-align: center;"><img src="legend/MAKLUMATSEKOLAHDAERAHKINTA_7_MenengahRendahdanAtas1.png" /></td><td>Menengah Rendah dan Atas</td></tr><tr><td style="text-align: center;"><img src="legend/MAKLUMATSEKOLAHDAERAHKINTA_7_MenengahRendahAtasdanTingkatan6STAM2.png" /></td><td>Menengah Rendah, Atas dan Tingkatan 6/STAM</td></tr><tr><td style="text-align: center;"><img src="legend/MAKLUMATSEKOLAHDAERAHKINTA_7_PrasekolahdanRendah3.png" /></td><td>Prasekolah dan Rendah</td></tr><tr><td style="text-align: center;"><img src="legend/MAKLUMATSEKOLAHDAERAHKINTA_7_Rendah4.png" /></td><td>Rendah</td></tr><tr><td style="text-align: center;"><img src="legend/MAKLUMATSEKOLAHDAERAHKINTA_7_Tingkatan65.png" /></td><td>Tingkatan 6</td></tr></table>', layer: layer_MAKLUMATSEKOLAHDAERAHKINTA_7},
-            {label: 'SUHU (°C) 2020<br /><table><tr><td style="text-align: center;"><img src="legend/SUHUC2020_6_132660.png" /></td><td>13 - 26.6</td></tr><tr><td style="text-align: center;"><img src="legend/SUHUC2020_6_2662881.png" /></td><td>26.6 - 28.8</td></tr><tr><td style="text-align: center;"><img src="legend/SUHUC2020_6_2883162.png" /></td><td>28.8 - 31.6</td></tr></table>', layer: layer_SUHUC2020_6},
-            {label: "LST 2015", layer: layer_LST2015_5},
-            {label: "LST 2020", layer: layer_LST2020_4},
-            {label: "LST 2025", layer: layer_LST2025_3},
-            {label: '<img src="legend/BOARDERKINTA_2.png" /> BOARDER KINTA', layer: layer_BOARDERKINTA_2},
+            {label: 'SUHU (°C) <br /><table><tr><td style="text-align: center;"><img src="legend/SUHUC_6_2513070.png" /></td><td>25.1 - 30.7</td></tr><tr><td style="text-align: center;"><img src="legend/SUHUC_6_3073171.png" /></td><td>30.7 - 31.7</td></tr><tr><td style="text-align: center;"><img src="legend/SUHUC_6_3173352.png" /></td><td>31.7 - 33.5</td></tr></table>', layer: layer_SUHUC_6},
+            {label: '<img src="legend/BOARDERKINTA_5.png" /> BOARDER KINTA', layer: layer_BOARDERKINTA_5},
+            {label: "LST 2015", layer: layer_LST2015_4},
+            {label: "LST 2020", layer: layer_LST2020_3},
+            {label: "LST 2025", layer: layer_LST2025_2},
             {label: "Google Satellite", layer: layer_GoogleSatellite_1},
             {label: "OSM Standard", layer: layer_OSMStandard_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
