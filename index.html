@@ -45,7 +45,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[4.456561611641926,100.97150262731161],[4.62711077524217,101.3032876896056]]);
+        }).fitBounds([[4.517889371792408,101.05529336784456],[4.5968118324808644,101.20882853027602]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -188,7 +188,7 @@
         }
 
         function style_SUHUC_6_0(feature) {
-            if (feature.properties['_max'] >= 25.123329 && feature.properties['_max'] <= 27.905740 ) {
+            if (feature.properties['_max'] >= 25.123329 && feature.properties['_max'] <= 30.682665 ) {
                 return {
                 pane: 'pane_SUHUC_6',
                 opacity: 1,
@@ -203,7 +203,7 @@
                 interactive: true,
             }
             }
-            if (feature.properties['_max'] >= 27.905740 && feature.properties['_max'] <= 30.688151 ) {
+            if (feature.properties['_max'] >= 30.682665 && feature.properties['_max'] <= 31.704033 ) {
                 return {
                 pane: 'pane_SUHUC_6',
                 opacity: 1,
@@ -214,11 +214,11 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,128,255,1.0)',
+                fillColor: 'rgba(255,111,238,1.0)',
                 interactive: true,
             }
             }
-            if (feature.properties['_max'] >= 30.688151 && feature.properties['_max'] <= 33.470562 ) {
+            if (feature.properties['_max'] >= 31.704033 && feature.properties['_max'] <= 33.470562 ) {
                 return {
                 pane: 'pane_SUHUC_6',
                 opacity: 1,
@@ -311,72 +311,96 @@
                 case 'Menengah Atas':
                     return {
                 pane: 'pane_MAKLUMATSEKOLAHDAERAHKINTA_7',
-        rotationAngle: 0.0,
-        rotationOrigin: 'center center',
-        icon: L.icon({
-            iconUrl: 'markers/MAKLUMATSEKOLAHDAERAHKINTA_7.svg',
-            iconSize: [15.960000000000013, 15.960000000000013]
-        }),
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(45,232,67,1.0)',
                 interactive: true,
             }
                     break;
                 case 'Menengah Rendah dan Atas':
                     return {
                 pane: 'pane_MAKLUMATSEKOLAHDAERAHKINTA_7',
-        rotationAngle: 0.0,
-        rotationOrigin: 'center center',
-        icon: L.icon({
-            iconUrl: 'markers/MAKLUMATSEKOLAHDAERAHKINTA_7.svg',
-            iconSize: [15.960000000000013, 15.960000000000013]
-        }),
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(175,115,203,1.0)',
                 interactive: true,
             }
                     break;
                 case 'Menengah Rendah, Atas dan Tingkatan 6/STAM':
                     return {
                 pane: 'pane_MAKLUMATSEKOLAHDAERAHKINTA_7',
-        rotationAngle: 0.0,
-        rotationOrigin: 'center center',
-        icon: L.icon({
-            iconUrl: 'markers/MAKLUMATSEKOLAHDAERAHKINTA_7.svg',
-            iconSize: [15.960000000000013, 15.960000000000013]
-        }),
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(26,230,227,1.0)',
                 interactive: true,
             }
                     break;
                 case 'Prasekolah dan Rendah':
                     return {
                 pane: 'pane_MAKLUMATSEKOLAHDAERAHKINTA_7',
-        rotationAngle: 0.0,
-        rotationOrigin: 'center center',
-        icon: L.icon({
-            iconUrl: 'markers/MAKLUMATSEKOLAHDAERAHKINTA_7.svg',
-            iconSize: [15.960000000000013, 15.960000000000013]
-        }),
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(122,157,25,1.0)',
                 interactive: true,
             }
                     break;
                 case 'Rendah':
                     return {
                 pane: 'pane_MAKLUMATSEKOLAHDAERAHKINTA_7',
-        rotationAngle: 0.0,
-        rotationOrigin: 'center center',
-        icon: L.icon({
-            iconUrl: 'markers/MAKLUMATSEKOLAHDAERAHKINTA_7.svg',
-            iconSize: [15.960000000000013, 15.960000000000013]
-        }),
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,251,1,1.0)',
                 interactive: true,
             }
                     break;
                 case 'Tingkatan 6':
                     return {
                 pane: 'pane_MAKLUMATSEKOLAHDAERAHKINTA_7',
-        rotationAngle: 0.0,
-        rotationOrigin: 'center center',
-        icon: L.icon({
-            iconUrl: 'markers/MAKLUMATSEKOLAHDAERAHKINTA_7.svg',
-            iconSize: [15.960000000000013, 15.960000000000013]
-        }),
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(42,74,233,1.0)',
                 interactive: true,
             }
                     break;
@@ -397,7 +421,7 @@
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_MAKLUMATSEKOLAHDAERAHKINTA_7_0(feature));
+                return L.circleMarker(latlng, style_MAKLUMATSEKOLAHDAERAHKINTA_7_0(feature));
             },
         });
         bounds_group.addLayer(layer_MAKLUMATSEKOLAHDAERAHKINTA_7);
@@ -414,7 +438,7 @@
         .title += 'Search for a place';
         var overlaysTree = [
             {label: 'MAKLUMAT SEKOLAH DAERAH KINTA<br /><table><tr><td style="text-align: center;"><img src="legend/MAKLUMATSEKOLAHDAERAHKINTA_7_MenengahAtas0.png" /></td><td>Menengah Atas</td></tr><tr><td style="text-align: center;"><img src="legend/MAKLUMATSEKOLAHDAERAHKINTA_7_MenengahRendahdanAtas1.png" /></td><td>Menengah Rendah dan Atas</td></tr><tr><td style="text-align: center;"><img src="legend/MAKLUMATSEKOLAHDAERAHKINTA_7_MenengahRendahAtasdanTingkatan6STAM2.png" /></td><td>Menengah Rendah, Atas dan Tingkatan 6/STAM</td></tr><tr><td style="text-align: center;"><img src="legend/MAKLUMATSEKOLAHDAERAHKINTA_7_PrasekolahdanRendah3.png" /></td><td>Prasekolah dan Rendah</td></tr><tr><td style="text-align: center;"><img src="legend/MAKLUMATSEKOLAHDAERAHKINTA_7_Rendah4.png" /></td><td>Rendah</td></tr><tr><td style="text-align: center;"><img src="legend/MAKLUMATSEKOLAHDAERAHKINTA_7_Tingkatan65.png" /></td><td>Tingkatan 6</td></tr></table>', layer: layer_MAKLUMATSEKOLAHDAERAHKINTA_7},
-            {label: 'SUHU (°C) <br /><table><tr><td style="text-align: center;"><img src="legend/SUHUC_6_2512790.png" /></td><td>25.1 - 27.9</td></tr><tr><td style="text-align: center;"><img src="legend/SUHUC_6_2793071.png" /></td><td>27.9 - 30.7</td></tr><tr><td style="text-align: center;"><img src="legend/SUHUC_6_3073352.png" /></td><td>30.7 - 33.5</td></tr></table>', layer: layer_SUHUC_6},
+            {label: 'SUHU (°C) <br /><table><tr><td style="text-align: center;"><img src="legend/SUHUC_6_2513070.png" /></td><td>25.1 - 30.7</td></tr><tr><td style="text-align: center;"><img src="legend/SUHUC_6_3073171.png" /></td><td>30.7 - 31.7</td></tr><tr><td style="text-align: center;"><img src="legend/SUHUC_6_3173352.png" /></td><td>31.7 - 33.5</td></tr></table>', layer: layer_SUHUC_6},
             {label: '<img src="legend/SEMPADANKINTA_5.png" /> SEMPADAN KINTA', layer: layer_SEMPADANKINTA_5},
             {label: "LST 2015", layer: layer_LST2015_4},
             {label: "LST 2020", layer: layer_LST2020_3},
